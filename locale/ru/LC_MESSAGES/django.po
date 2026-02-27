@@ -1,0 +1,200 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-27 20:53+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\config\settings.py:101 .\users\models.py:8
+msgid "English"
+msgstr "English"
+
+#: .\config\settings.py:102 .\users\models.py:9
+msgid "Русский"
+msgstr "Русский"
+
+#: .\templates\base.html:39 .\templates\users\profile.html:4
+#: .\templates\users\profile.html:15
+msgid "Profile"
+msgstr "Профиль"
+
+#: .\templates\base.html:40 .\templates\users\profile.html:102
+msgid "Logout"
+msgstr "Выйти"
+
+#: .\templates\base.html:42 .\templates\users\login.html:3
+#: .\templates\users\login.html:8
+msgid "Login"
+msgstr "Вход"
+
+#: .\templates\base.html:43 .\templates\users\login.html:30
+#: .\templates\users\register.html:3 .\templates\users\register.html:8
+msgid "Register"
+msgstr "Регистрация"
+
+#: .\templates\users\login.html:25
+#: .\templates\users\password_reset_complete.html:10
+#: .\templates\users\register.html:46
+msgid "Sign in"
+msgstr "Войти"
+
+#: .\templates\users\login.html:30
+msgid "No account?"
+msgstr "Нет аккаунта?"
+
+#: .\templates\users\password_reset_complete.html:3
+#: .\templates\users\password_reset_complete.html:8
+#, fuzzy
+#| msgid "Password"
+msgid "Password changed"
+msgstr "Пароль изменён"
+
+#: .\templates\users\password_reset_complete.html:9
+msgid "Now you can log in with your new password."
+msgstr "Теперь вы можете войти с новым паролем."
+
+#: .\templates\users\password_reset_confirm.html:3
+#: .\templates\users\password_reset_confirm.html:8
+#, fuzzy
+#| msgid "Change password"
+msgid "Set new password"
+msgstr "Сменить пароль"
+
+#: .\templates\users\password_reset_confirm.html:19
+#, fuzzy
+#| msgid "Change password"
+msgid "Save new password"
+msgstr "Сменить пароль"
+
+#: .\templates\users\password_reset_done.html:3
+#: .\templates\users\password_reset_done.html:8
+#, fuzzy
+#| msgid "Email"
+msgid "Email sent"
+msgstr "Почта"
+
+#: .\templates\users\password_reset_done.html:9
+msgid "If an account with that email exists, we sent a reset link."
+msgstr "Если аккаунт с таким email существует, мы отправили ссылку для сброса пароля."
+
+#: .\templates\users\password_reset_done.html:10
+msgid "Back to login"
+msgstr "Назад ко входу"
+
+#: .\templates\users\password_reset_form.html:3
+#: .\templates\users\password_reset_form.html:8
+#, fuzzy
+#| msgid "Password"
+msgid "Password reset"
+msgstr "Пароль"
+
+#: .\templates\users\password_reset_form.html:9
+msgid "Enter your email and we will send you a reset link."
+msgstr "Введите email — мы отправим ссылку для сброса пароля."
+
+#: .\templates\users\password_reset_form.html:20
+msgid "Send reset link"
+msgstr "Отправить ссылку"
+
+#: .\templates\users\profile.html:17
+msgid "Registration date"
+msgstr "Дата регистрации"
+
+#: .\templates\users\profile.html:22
+msgid "Change password"
+msgstr "Сменить пароль"
+
+#: .\templates\users\profile.html:43
+msgid "Account"
+msgstr "Аккаунт"
+
+#: .\templates\users\profile.html:44
+msgid "Private"
+msgstr "Личное"
+
+#: .\templates\users\profile.html:48 .\templates\users\register.html:18
+msgid "Username"
+msgstr "Логин"
+
+#: .\templates\users\profile.html:51
+msgid "Used to sign in."
+msgstr "Используется для входа."
+
+#: .\templates\users\profile.html:55 .\templates\users\register.html:24
+msgid "Email"
+msgstr "Почта"
+
+#: .\templates\users\profile.html:58
+msgid "Used for account recovery (optional in this project)."
+msgstr "Используется для восстановления"
+
+#: .\templates\users\profile.html:66
+msgid "Profile details"
+msgstr "Профиль"
+
+#: .\templates\users\profile.html:69
+msgid "Full name"
+msgstr "Имя"
+
+#: .\templates\users\profile.html:72
+msgid "How your name will be shown inside the app."
+msgstr "Как ваше имя будет отображаться "
+
+#: .\templates\users\profile.html:76
+msgid "About me"
+msgstr "О себе"
+
+#: .\templates\users\profile.html:83
+msgid "Timezone"
+msgstr "Часовой пояс"
+
+#: .\templates\users\profile.html:86
+msgid "Example:"
+msgstr "Пример:"
+
+#: .\templates\users\profile.html:90
+msgid "Language"
+msgstr "Язык"
+
+#: .\templates\users\profile.html:93
+msgid "Applied after saving."
+msgstr "Применится после сохранения."
+
+#: .\templates\users\profile.html:103
+msgid "Save"
+msgstr "Сохранить"
+
+#: .\templates\users\register.html:30
+msgid "Password"
+msgstr "Пароль"
+
+#: .\templates\users\register.html:36
+msgid "Password confirmation"
+msgstr "Подтверждение пароля"
+
+#: .\templates\users\register.html:41
+msgid "Sign up"
+msgstr "Зарегистрироваться"
+
+#: .\templates\users\register.html:46
+msgid "Already have an account?"
+msgstr "Уже есть аккаунт?"
+
+#: .\users\views.py:36
+msgid "Registered successfully. Please sign in."
+msgstr "Регистрация успешна. Пожалуйста, войдите."

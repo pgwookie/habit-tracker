@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Profile" %}{% endblock %}
+
+{# делаем страницу широкой #}
+{% block container_class %}container{% endblock %}
+{% block container_style %}max-width: 1200px;{% endblock %}
+
+{% block content %}
+<div class="card shadow-sm">
+  <div class="card-body p-4">
+    <div class="d-flex align-items-start justify-content-between gap-3">
+      <div>
+        <h1 class="h4 mb-1">{% trans "Profile" %}</h1>
+        <div class="text-muted small">
+          {% trans "Registration date" %}: {{ user.date_joined|date:"d.m.Y H:i" }}
+        </div>
+      </div>
+
+      <a class="btn btn-outline-secondary btn-sm" href="{% url 'password_change' %}">
+        {% trans "Change password" %}
+      </a>
+    </div>
+
+    <hr class="my-4">
+
+    <form method="post">
+      {% csrf_token %}
+
+      {% if user_form.non_field_errors %}
+        <div class="alert alert-danger">{{ user_form.non_field_errors }}</div>
+      {% endif %}
+      {% if profile_form.non_field_errors %}
+        <div class="alert alert-danger">{{ profile_form.non_field_errors }}</div>
+      {% endif %}
+
+      <div class="row g-4">
+        <!-- LEFT: ACCOUNT -->
+        <div class="col-lg-5">
+          <div class="p-4 rounded-4 bg-light h-100">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <div class="fw-semibold">{% trans "Account" %}</div>
+              <span class="badge text-bg-secondary">{% trans "Private" %}</span>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">{% trans "Username" %}</label>
+              {{ user_form.username }}
+              <div class="text-danger small">{{ user_form.username.errors }}</div>
+              <div class="form-text">{% trans "Used to sign in." %}</div>
+            </div>
+
+            <div class="mb-0">
+              <label class="form-label">{% trans "Email" %}</label>
+              {{ user_form.email }}
+              <div class="text-danger small">{{ user_form.email.errors }}</div>
+              <div class="form-text">{% trans "Used for account recovery (optional in this project)." %}</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: PROFILE DETAILS -->
+        <div class="col-lg-7">
+          <div class="p-4 rounded-4 bg-light h-100">
+            <div class="fw-semibold mb-3">{% trans "Profile details" %}</div>
+
+            <div class="mb-3">
+              <label class="form-label">{% trans "Full name" %}</label>
+              {{ profile_form.full_name }}
+              <div class="text-danger small">{{ profile_form.full_name.errors }}</div>
+              <div class="form-text">{% trans "How your name will be shown inside the app." %}</div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">{% trans "About me" %}</label>
+              {{ profile_form.bio }}
+              <div class="text-danger small">{{ profile_form.bio.errors }}</div>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">{% trans "Timezone" %}</label>
+                {{ profile_form.timezone }}
+                <div class="text-danger small">{{ profile_form.timezone.errors }}</div>
+                <div class="form-text">{% trans "Example:" %} Europe/Moscow</div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">{% trans "Language" %}</label>
+                {{ profile_form.language_preference }}
+                <div class="text-danger small">{{ profile_form.language_preference.errors }}</div>
+                <div class="form-text">{% trans "Applied after saving." %}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACTIONS (full width) -->
+        <div class="col-12">
+          <div class="d-flex flex-wrap gap-2 justify-content-end">
+            <a class="btn btn-outline-danger" href="{% url 'logout' %}">{% trans "Logout" %}</a>
+            <button class="btn btn-primary">{% trans "Save" %}</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

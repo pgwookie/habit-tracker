@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Register" %}{% endblock %}
+
+{% block content %}
+<div class="card shadow-sm">
+  <div class="card-body p-4">
+    <h1 class="h4 mb-3">{% trans "Register" %}</h1>
+
+    <form method="post" class="d-grid gap-3">
+      {% csrf_token %}
+
+      {% if form.non_field_errors %}
+        <div class="alert alert-danger">{{ form.non_field_errors }}</div>
+      {% endif %}
+
+      <div>
+        <label class="form-label">{% trans "Username" %}</label>
+        {{ form.username }}
+        <div class="text-danger small">{{ form.username.errors }}</div>
+      </div>
+
+      <div>
+        <label class="form-label">{% trans "Email" %}</label>
+        {{ form.email }}
+        <div class="text-danger small">{{ form.email.errors }}</div>
+      </div>
+
+      <div>
+        <label class="form-label">{% trans "Password" %}</label>
+        {{ form.password1 }}
+        <div class="text-danger small">{{ form.password1.errors }}</div>
+      </div>
+
+      <div>
+        <label class="form-label">{% trans "Password confirmation" %}</label>
+        {{ form.password2 }}
+        <div class="text-danger small">{{ form.password2.errors }}</div>
+      </div>
+
+      <button class="btn btn-primary">{% trans "Sign up" %}</button>
+    </form>
+
+    <hr class="my-4">
+    <div class="text-center">
+      {% trans "Already have an account?" %} <a href="{% url 'login' %}">{% trans "Sign in" %}</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

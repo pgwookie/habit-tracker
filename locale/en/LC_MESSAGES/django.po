@@ -1,0 +1,188 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-27 20:53+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\config\settings.py:101 .\users\models.py:8
+msgid "English"
+msgstr ""
+
+#: .\config\settings.py:102 .\users\models.py:9
+msgid "Русский"
+msgstr ""
+
+#: .\templates\base.html:39 .\templates\users\profile.html:4
+#: .\templates\users\profile.html:15
+msgid "Profile"
+msgstr ""
+
+#: .\templates\base.html:40 .\templates\users\profile.html:102
+msgid "Logout"
+msgstr ""
+
+#: .\templates\base.html:42 .\templates\users\login.html:3
+#: .\templates\users\login.html:8
+msgid "Login"
+msgstr ""
+
+#: .\templates\base.html:43 .\templates\users\login.html:30
+#: .\templates\users\register.html:3 .\templates\users\register.html:8
+msgid "Register"
+msgstr ""
+
+#: .\templates\users\login.html:25
+#: .\templates\users\password_reset_complete.html:10
+#: .\templates\users\register.html:46
+msgid "Sign in"
+msgstr ""
+
+#: .\templates\users\login.html:30
+msgid "No account?"
+msgstr ""
+
+#: .\templates\users\password_reset_complete.html:3
+#: .\templates\users\password_reset_complete.html:8
+msgid "Password changed"
+msgstr ""
+
+#: .\templates\users\password_reset_complete.html:9
+msgid "Now you can log in with your new password."
+msgstr ""
+
+#: .\templates\users\password_reset_confirm.html:3
+#: .\templates\users\password_reset_confirm.html:8
+msgid "Set new password"
+msgstr ""
+
+#: .\templates\users\password_reset_confirm.html:19
+msgid "Save new password"
+msgstr ""
+
+#: .\templates\users\password_reset_done.html:3
+#: .\templates\users\password_reset_done.html:8
+msgid "Email sent"
+msgstr ""
+
+#: .\templates\users\password_reset_done.html:9
+msgid "If an account with that email exists, we sent a reset link."
+msgstr ""
+
+#: .\templates\users\password_reset_done.html:10
+msgid "Back to login"
+msgstr ""
+
+#: .\templates\users\password_reset_form.html:3
+#: .\templates\users\password_reset_form.html:8
+msgid "Password reset"
+msgstr ""
+
+#: .\templates\users\password_reset_form.html:9
+msgid "Enter your email and we will send you a reset link."
+msgstr ""
+
+#: .\templates\users\password_reset_form.html:20
+msgid "Send reset link"
+msgstr ""
+
+#: .\templates\users\profile.html:17
+msgid "Registration date"
+msgstr ""
+
+#: .\templates\users\profile.html:22
+msgid "Change password"
+msgstr ""
+
+#: .\templates\users\profile.html:43
+msgid "Account"
+msgstr ""
+
+#: .\templates\users\profile.html:44
+msgid "Private"
+msgstr ""
+
+#: .\templates\users\profile.html:48 .\templates\users\register.html:18
+msgid "Username"
+msgstr ""
+
+#: .\templates\users\profile.html:51
+msgid "Used to sign in."
+msgstr ""
+
+#: .\templates\users\profile.html:55 .\templates\users\register.html:24
+msgid "Email"
+msgstr ""
+
+#: .\templates\users\profile.html:58
+msgid "Used for account recovery (optional in this project)."
+msgstr ""
+
+#: .\templates\users\profile.html:66
+msgid "Profile details"
+msgstr ""
+
+#: .\templates\users\profile.html:69
+msgid "Full name"
+msgstr ""
+
+#: .\templates\users\profile.html:72
+msgid "How your name will be shown inside the app."
+msgstr ""
+
+#: .\templates\users\profile.html:76
+msgid "About me"
+msgstr ""
+
+#: .\templates\users\profile.html:83
+msgid "Timezone"
+msgstr ""
+
+#: .\templates\users\profile.html:86
+msgid "Example:"
+msgstr ""
+
+#: .\templates\users\profile.html:90
+msgid "Language"
+msgstr ""
+
+#: .\templates\users\profile.html:93
+msgid "Applied after saving."
+msgstr ""
+
+#: .\templates\users\profile.html:103
+msgid "Save"
+msgstr ""
+
+#: .\templates\users\register.html:30
+msgid "Password"
+msgstr ""
+
+#: .\templates\users\register.html:36
+msgid "Password confirmation"
+msgstr ""
+
+#: .\templates\users\register.html:41
+msgid "Sign up"
+msgstr ""
+
+#: .\templates\users\register.html:46
+msgid "Already have an account?"
+msgstr ""
+
+#: .\users\views.py:36
+msgid "Registered successfully. Please sign in."
+msgstr ""
