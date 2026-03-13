@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Habits" %}{% endblock %}
+
+{% block container_style %}max-width: 1200px;{% endblock %}
+
+{% block content %}
+<div class="d-flex align-items-center justify-content-between mb-3">
+  <h1 class="h4 mb-0">{% trans "Habits" %}</h1>
+  <a class="btn btn-primary" href="{% url 'habit_create' %}">{% trans "New habit" %}</a>
+</div>
+
+<div class="d-flex gap-2 mb-3">
+  <a class="btn btn-outline-secondary btn-sm {% if status == 'active' %}active{% endif %}" href="?status=active">{% trans "Active" %}</a>
+  <a class="btn btn-outline-secondary btn-sm {% if status == 'archived' %}active{% endif %}" href="?status=archived">{% trans "Archived" %}</a>
+  <a class="btn btn-outline-secondary btn-sm {% if status == 'all' %}active{% endif %}" href="?status=all">{% trans "All" %}</a>
+</div>
+
+{% if habits %}
+  <div class="list-group">
+    {% for h in habits %}
+      <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+         href="{% url 'habit_detail' h.pk %}">
+        <div>
+          <div class="fw-semibold">{{ h.title }}</div>
+          <div class="text-muted small">{{ h.description|default:"" }}</div>
+        </div>
+        {% if h.is_archived %}
+          <span class="badge text-bg-secondary">{% trans "Archived" %}</span>
+        {% endif %}
+      </a>
+    {% endfor %}
+  </div>
+{% else %}
+  <div class="alert alert-light border">
+    {% trans "No habits yet." %}
+  </div>
+{% endif %}
+{% endblock %}

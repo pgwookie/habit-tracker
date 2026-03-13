@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-27 20:53+0700\n"
+"POT-Creation-Date: 2026-03-14 00:28+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,31 +18,364 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\config\settings.py:101 .\users\models.py:8
+#: .\config\settings.py:102 .\users\models.py:8
 msgid "English"
 msgstr ""
 
-#: .\config\settings.py:102 .\users\models.py:9
+#: .\config\settings.py:103 .\users\models.py:9
 msgid "Русский"
 msgstr ""
 
-#: .\templates\base.html:39 .\templates\users\profile.html:4
+#: .\habits\models.py:13
+msgid "Health"
+msgstr ""
+
+#: .\habits\models.py:14
+msgid "Study"
+msgstr ""
+
+#: .\habits\models.py:15
+msgid "Work"
+msgstr ""
+
+#: .\habits\models.py:16
+msgid "Mindfulness"
+msgstr ""
+
+#: .\habits\models.py:17
+msgid "Home"
+msgstr ""
+
+#: .\habits\models.py:18
+msgid "Other"
+msgstr ""
+
+#: .\habits\models.py:21
+msgid "Low"
+msgstr ""
+
+#: .\habits\models.py:22
+msgid "Medium"
+msgstr ""
+
+#: .\habits\models.py:23
+msgid "High"
+msgstr ""
+
+#: .\habits\models.py:26
+msgid "Daily"
+msgstr ""
+
+#: .\habits\models.py:27
+msgid "Specific weekdays"
+msgstr ""
+
+#: .\habits\models.py:28
+msgid "Every N days"
+msgstr ""
+
+#: .\habits\models.py:29
+msgid "N times per week"
+msgstr ""
+
+#: .\habits\models.py:32
+msgid "times"
+msgstr ""
+
+#: .\habits\models.py:33
+msgid "minutes"
+msgstr ""
+
+#: .\habits\models.py:34
+msgid "pages"
+msgstr ""
+
+#: .\habits\models.py:35
+msgid "glasses"
+msgstr ""
+
+#: .\habits\models.py:36
+msgid "km"
+msgstr ""
+
+#: .\habits\models.py:43
+msgid "Owner"
+msgstr ""
+
+#: .\habits\models.py:46
+msgid "Title"
+msgstr ""
+
+#: .\habits\models.py:47 .\templates\habits\habit_detail.html:42
+msgid "Description"
+msgstr ""
+
+#: .\habits\models.py:53 .\templates\habits\habit_detail.html:69
+msgid "Category"
+msgstr ""
+
+#: .\habits\models.py:59 .\templates\habits\habit_detail.html:74
+msgid "Priority"
+msgstr ""
+
+#: .\habits\models.py:63
+msgid "Icon (emoji)"
+msgstr ""
+
+#: .\habits\models.py:65 .\templates\habits\habit_detail.html:13
+msgid "Start date"
+msgstr ""
+
+#: .\habits\models.py:66 .\templates\habits\habit_detail.html:81
+#: .\templates\habits\habit_list.html:15 .\templates\habits\habit_list.html:29
+msgid "Archived"
+msgstr ""
+
+#: .\habits\models.py:73 .\templates\habits\habit_detail.html:103
+msgid "Frequency"
+msgstr ""
+
+#: .\habits\models.py:77
+msgid "Weekdays"
+msgstr ""
+
+#: .\habits\models.py:80
+msgid "Interval days"
+msgstr ""
+
+#: .\habits\models.py:83 .\templates\habits\habit_detail.html:121
+msgid "Times per week"
+msgstr ""
+
+#: .\habits\models.py:86
+msgid "Target value"
+msgstr ""
+
+#: .\habits\models.py:91
+msgid "Target unit"
+msgstr ""
+
+#: .\habits\models.py:95
+msgid "Reminder enabled"
+msgstr ""
+
+#: .\habits\models.py:96
+msgid "Reminder time"
+msgstr ""
+
+#: .\habits\models.py:99 .\templates\habits\habit_detail.html:90
+msgid "Public"
+msgstr ""
+
+#: .\habits\models.py:100 .\templates\habits\habit_detail.html:47
+msgid "Notes"
+msgstr ""
+
+#: .\habits\models.py:102
+msgid "Created at"
+msgstr ""
+
+#: .\habits\models.py:103
+msgid "Updated at"
+msgstr ""
+
+#: .\habits\views.py:37
+msgid "Habit created."
+msgstr ""
+
+#: .\habits\views.py:53
+msgid "Habit updated."
+msgstr ""
+
+#: .\habits\views.py:75
+msgid "Habit archived."
+msgstr ""
+
+#: .\habits\views.py:87
+msgid "Habit restored."
+msgstr ""
+
+#: .\habits\views.py:97
+msgid "Habit deleted."
+msgstr ""
+
+#: .\habits\views.py:140
+msgid "Marked as not done for today."
+msgstr ""
+
+#: .\habits\views.py:143
+msgid "Marked as done for today."
+msgstr ""
+
+#: .\templates\base.html:39 .\templates\habits\habit_list.html:3
+#: .\templates\habits\habit_list.html:9
+msgid "Habits"
+msgstr ""
+
+#: .\templates\base.html:40 .\templates\users\profile.html:4
 #: .\templates\users\profile.html:15
 msgid "Profile"
 msgstr ""
 
-#: .\templates\base.html:40 .\templates\users\profile.html:102
+#: .\templates\base.html:41 .\templates\users\profile.html:102
 msgid "Logout"
 msgstr ""
 
-#: .\templates\base.html:42 .\templates\users\login.html:3
+#: .\templates\base.html:43 .\templates\users\login.html:3
 #: .\templates\users\login.html:8
 msgid "Login"
 msgstr ""
 
-#: .\templates\base.html:43 .\templates\users\login.html:30
+#: .\templates\base.html:44 .\templates\users\login.html:30
 #: .\templates\users\register.html:3 .\templates\users\register.html:8
 msgid "Register"
+msgstr ""
+
+#: .\templates\habits\habit_confirm_delete.html:3
+#: .\templates\habits\habit_confirm_delete.html:8
+msgid "Delete habit"
+msgstr ""
+
+#: .\templates\habits\habit_confirm_delete.html:10
+msgid "Are you sure you want to delete:"
+msgstr ""
+
+#: .\templates\habits\habit_confirm_delete.html:15
+#: .\templates\habits\habit_form.html:152
+msgid "Cancel"
+msgstr ""
+
+#: .\templates\habits\habit_confirm_delete.html:16
+#: .\templates\habits\habit_detail.html:33
+msgid "Delete"
+msgstr ""
+
+#: .\templates\habits\habit_detail.html:14
+msgid "Next planned"
+msgstr ""
+
+#: .\templates\habits\habit_detail.html:19
+msgid "Edit"
+msgstr ""
+
+#: .\templates\habits\habit_detail.html:24
+msgid "Archive"
+msgstr ""
+
+#: .\templates\habits\habit_detail.html:29
+msgid "Restore"
+msgstr ""
+
+#: .\templates\habits\habit_detail.html:54
+msgid "Progress"
+msgstr ""
+
+#: .\templates\habits\habit_detail.html:56
+msgid "Progress and history will be added in the next sprint."
+msgstr ""
+
+#: .\templates\habits\habit_detail.html:66
+msgid "Overview"
+msgstr ""
+
+#: .\templates\habits\habit_detail.html:79
+msgid "Status"
+msgstr ""
+
+#: .\templates\habits\habit_detail.html:83
+#: .\templates\habits\habit_list.html:14
+msgid "Active"
+msgstr ""
+
+#: .\templates\habits\habit_detail.html:88
+msgid "Visibility"
+msgstr ""
+
+#: .\templates\habits\habit_detail.html:92 .\templates\users\profile.html:44
+msgid "Private"
+msgstr ""
+
+#: .\templates\habits\habit_detail.html:100
+#: .\templates\habits\habit_form.html:99
+msgid "Schedule"
+msgstr ""
+
+#: .\templates\habits\habit_detail.html:108
+msgid "Summary"
+msgstr ""
+
+#: .\templates\habits\habit_detail.html:114
+msgid "Interval"
+msgstr ""
+
+#: .\templates\habits\habit_detail.html:115
+msgid "day(s)"
+msgstr ""
+
+#: .\templates\habits\habit_detail.html:130
+#: .\templates\habits\habit_form.html:78
+msgid "Goal"
+msgstr ""
+
+#: .\templates\habits\habit_detail.html:133
+msgid "Target"
+msgstr ""
+
+#: .\templates\habits\habit_detail.html:137
+msgid "No goal set."
+msgstr ""
+
+#: .\templates\habits\habit_detail.html:143
+msgid "Created"
+msgstr ""
+
+#: .\templates\habits\habit_detail.html:143
+msgid "Updated"
+msgstr ""
+
+#: .\templates\habits\habit_detail.html:149
+#: .\templates\habits\habit_form.html:22
+msgid "Back to list"
+msgstr ""
+
+#: .\templates\habits\habit_form.html:5 .\templates\habits\habit_form.html:16
+msgid "Create habit"
+msgstr ""
+
+#: .\templates\habits\habit_form.html:5 .\templates\habits\habit_form.html:16
+msgid "Edit habit"
+msgstr ""
+
+#: .\templates\habits\habit_form.html:19
+msgid "Fill in the habit settings and save."
+msgstr ""
+
+#: .\templates\habits\habit_form.html:36
+msgid "Basics"
+msgstr ""
+
+#: .\templates\habits\habit_form.html:113
+msgid "Used only for Specific weekdays."
+msgstr ""
+
+#: .\templates\habits\habit_form.html:133
+msgid "Privacy & notes"
+msgstr ""
+
+#: .\templates\habits\habit_form.html:153 .\templates\users\profile.html:103
+msgid "Save"
+msgstr ""
+
+#: .\templates\habits\habit_list.html:10
+msgid "New habit"
+msgstr ""
+
+#: .\templates\habits\habit_list.html:16
+msgid "All"
+msgstr ""
+
+#: .\templates\habits\habit_list.html:36
+msgid "No habits yet."
 msgstr ""
 
 #: .\templates\users\login.html:25
@@ -111,10 +444,6 @@ msgstr ""
 msgid "Account"
 msgstr ""
 
-#: .\templates\users\profile.html:44
-msgid "Private"
-msgstr ""
-
 #: .\templates\users\profile.html:48 .\templates\users\register.html:18
 msgid "Username"
 msgstr ""
@@ -161,10 +490,6 @@ msgstr ""
 
 #: .\templates\users\profile.html:93
 msgid "Applied after saving."
-msgstr ""
-
-#: .\templates\users\profile.html:103
-msgid "Save"
 msgstr ""
 
 #: .\templates\users\register.html:30

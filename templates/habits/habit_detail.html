@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{{ habit.title }}{% endblock %}
+{% block container_style %}max-width: 1200px;{% endblock %}
+
+{% block content %}
+<div class="d-flex align-items-center justify-content-between mb-3">
+  <div>
+    <h1 class="h4 mb-1">
+      {% if habit.icon %}{{ habit.icon }} {% endif %}{{ habit.title }}
+    </h1>
+    <div class="text-muted small">
+      {% trans "Start date" %}: {{ habit.start_date }}
+      • {% trans "Next planned" %}: {{ next_date }}
+    </div>
+  </div>
+
+  <div class="d-flex gap-2">
+    <a class="btn btn-outline-primary" href="{% url 'habit_update' habit.pk %}">{% trans "Edit" %}</a>
+
+    {% if not habit.is_archived %}
+      <form method="post" action="{% url 'habit_archive' habit.pk %}">
+        {% csrf_token %}
+        <button class="btn btn-outline-secondary">{% trans "Archive" %}</button>
+      </form>
+    {% else %}
+      <form method="post" action="{% url 'habit_unarchive' habit.pk %}">
+        {% csrf_token %}
+        <button class="btn btn-outline-secondary">{% trans "Restore" %}</button>
+      </form>
+    {% endif %}
+
+    <a class="btn btn-outline-danger" href="{% url 'habit_delete' habit.pk %}">{% trans "Delete" %}</a>
+  </div>
+</div>
+
+<div class="row g-4">
+  <!-- LEFT -->
+  <div class="col-lg-7">
+    <div class="card shadow-sm mb-4">
+      <div class="card-body p-4">
+        <div class="fw-semibold mb-2">{% trans "Description" %}</div>
+        <div class="text-muted">{{ habit.description|default:"—" }}</div>
+
+        <hr class="my-4">
+
+        <div class="fw-semibold mb-2">{% trans "Notes" %}</div>
+        <div class="text-muted" style="white-space: pre-wrap;">{{ habit.notes|default:"—" }}</div>
+      </div>
+    </div>
+
+    <div class="card shadow-sm">
+      <div class="card-body p-4">
+        <div class="fw-semibold mb-2">{% trans "Progress" %}</div>
+        <div class="alert alert-light border mb-0">
+          {% trans "Progress and history will be added in the next sprint." %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="col-lg-5">
+    <div class="card shadow-sm mb-4">
+      <div class="card-body p-4">
+        <div class="fw-semibold mb-3">{% trans "Overview" %}</div>
+
+        <div class="d-flex justify-content-between mb-2">
+          <span class="text-muted">{% trans "Category" %}</span>
+          <span class="fw-semibold">{{ habit.get_category_display }}</span>
+        </div>
+
+        <div class="d-flex justify-content-between mb-2">
+          <span class="text-muted">{% trans "Priority" %}</span>
+          <span class="fw-semibold">{{ habit.get_priority_display }}</span>
+        </div>
+
+        <div class="d-flex justify-content-between mb-2">
+          <span class="text-muted">{% trans "Status" %}</span>
+          {% if habit.is_archived %}
+            <span class="badge text-bg-secondary">{% trans "Archived" %}</span>
+          {% else %}
+            <span class="badge text-bg-success">{% trans "Active" %}</span>
+          {% endif %}
+        </div>
+
+        <div class="d-flex justify-content-between mb-2">
+          <span class="text-muted">{% trans "Visibility" %}</span>
+          {% if habit.is_public %}
+            <span class="badge text-bg-primary">{% trans "Public" %}</span>
+          {% else %}
+            <span class="badge text-bg-dark">{% trans "Private" %}</span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+      <div class="card-body p-4">
+        <div class="fw-semibold mb-3">{% trans "Schedule" %}</div>
+
+        <div class="d-flex justify-content-between mb-2">
+          <span class="text-muted">{% trans "Frequency" %}</span>
+          <span class="fw-semibold">{{ habit.get_frequency_type_display }}</span>
+        </div>
+
+        <div class="d-flex justify-content-between mb-2">
+          <span class="text-muted">{% trans "Summary" %}</span>
+          <span class="fw-semibold">{{ schedule_summary }}</span>
+        </div>
+
+        {% if habit.frequency_type == "interval" %}
+          <div class="d-flex justify-content-between mb-2">
+            <span class="text-muted">{% trans "Interval" %}</span>
+            <span class="fw-semibold">{{ habit.interval_days }} {% trans "day(s)" %}</span>
+          </div>
+        {% endif %}
+
+        {% if habit.frequency_type == "weekly_times" %}
+          <div class="d-flex justify-content-between mb-2">
+            <span class="text-muted">{% trans "Times per week" %}</span>
+            <span class="fw-semibold">{{ habit.weekly_times }}</span>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="card shadow-sm">
+      <div class="card-body p-4">
+        <div class="fw-semibold mb-3">{% trans "Goal" %}</div>
+        {% if goal_summary %}
+          <div class="d-flex justify-content-between">
+            <span class="text-muted">{% trans "Target" %}</span>
+            <span class="fw-semibold">{{ goal_summary }}</span>
+          </div>
+        {% else %}
+          <div class="text-muted">{% trans "No goal set." %}</div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="text-muted small mt-3">
+      ID: {{ habit.pk }} • {% trans "Created" %}: {{ habit.created_at|date:"d.m.Y H:i" }} • {% trans "Updated" %}: {{ habit.updated_at|date:"d.m.Y H:i" }}
+    </div>
+  </div>
+</div>
+
+<div class="mt-4">
+  <a class="btn btn-outline-secondary" href="{% url 'habit_list' %}">{% trans "Back to list" %}</a>
+</div>
+{% endblock %}

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "accounts",
     "users",
+    "habits",
 ]
 
 MIDDLEWARE = [
@@ -112,7 +113,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Auth redirects
 LOGIN_URL = "login"
-LOGIN_REDIRECT_URL = "profile"
+LOGIN_REDIRECT_URL = "habit_list"
 LOGOUT_REDIRECT_URL = "login"
 
 # Email (dev) — письма будут печататься в консоль

@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}
+  {% if mode == "create" %}{% trans "Create habit" %}{% else %}{% trans "Edit habit" %}{% endif %}
+{% endblock %}
+
+{% block container_style %}max-width: 1200px;{% endblock %}
+
+{% block content %}
+<div class="card shadow-sm">
+  <div class="card-body p-4">
+    <div class="d-flex align-items-start justify-content-between gap-3 mb-3">
+      <div>
+        <h1 class="h4 mb-1">
+          {% if mode == "create" %}{% trans "Create habit" %}{% else %}{% trans "Edit habit" %}{% endif %}
+        </h1>
+        <div class="text-muted small">
+          {% trans "Fill in the habit settings and save." %}
+        </div>
+      </div>
+      <a class="btn btn-outline-secondary" href="{% url 'habit_list' %}">{% trans "Back to list" %}</a>
+    </div>
+
+    <form method="post">
+      {% csrf_token %}
+
+      {% if form.non_field_errors %}
+        <div class="alert alert-danger">{{ form.non_field_errors }}</div>
+      {% endif %}
+
+      <div class="row g-4">
+        <!-- LEFT COLUMN -->
+        <div class="col-lg-6">
+          <div class="p-3 rounded-4 bg-light border">
+            <div class="fw-semibold mb-3">{% trans "Basics" %}</div>
+
+            <div class="mb-3">
+              <label class="form-label">{{ form.title.label }}</label>
+              {{ form.title }}
+              <div class="text-danger small">{{ form.title.errors }}</div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">{{ form.description.label }}</label>
+              {{ form.description }}
+              <div class="text-danger small">{{ form.description.errors }}</div>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">{{ form.category.label }}</label>
+                {{ form.category }}
+                <div class="text-danger small">{{ form.category.errors }}</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">{{ form.priority.label }}</label>
+                {{ form.priority }}
+                <div class="text-danger small">{{ form.priority.errors }}</div>
+              </div>
+            </div>
+
+            <div class="row g-3 mt-1">
+              <div class="col-md-6">
+                <label class="form-label">{{ form.icon.label }}</label>
+                {{ form.icon }}
+                <div class="text-danger small">{{ form.icon.errors }}</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">{{ form.start_date.label }}</label>
+                {{ form.start_date }}
+                <div class="text-danger small">{{ form.start_date.errors }}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-4 bg-light border mt-4">
+            <div class="fw-semibold mb-3">{% trans "Goal" %}</div>
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">{{ form.target_value.label }}</label>
+                {{ form.target_value }}
+                {% if form.target_value.help_text %}<div class="form-text">{{ form.target_value.help_text }}</div>{% endif %}
+                <div class="text-danger small">{{ form.target_value.errors }}</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">{{ form.target_unit.label }}</label>
+                {{ form.target_unit }}
+                <div class="text-danger small">{{ form.target_unit.errors }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="col-lg-6">
+          <div class="p-3 rounded-4 bg-light border">
+            <div class="fw-semibold mb-3">{% trans "Schedule" %}</div>
+
+            <div class="mb-3">
+              <label class="form-label">{{ form.frequency_type.label }}</label>
+              {{ form.frequency_type }}
+              <div class="text-danger small">{{ form.frequency_type.errors }}</div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">{{ form.weekdays.label }}</label>
+              <div class="d-flex flex-wrap gap-3">
+                {{ form.weekdays }}
+              </div>
+              <div class="text-danger small">{{ form.weekdays.errors }}</div>
+              <div class="form-text">{% trans "Used only for Specific weekdays." %}</div>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">{{ form.interval_days.label }}</label>
+                {{ form.interval_days }}
+                {% if form.interval_days.help_text %}<div class="form-text">{{ form.interval_days.help_text }}</div>{% endif %}
+                <div class="text-danger small">{{ form.interval_days.errors }}</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">{{ form.weekly_times.label }}</label>
+                {{ form.weekly_times }}
+                {% if form.weekly_times.help_text %}<div class="form-text">{{ form.weekly_times.help_text }}</div>{% endif %}
+                <div class="text-danger small">{{ form.weekly_times.errors }}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-4 bg-light border mt-4">
+            <div class="fw-semibold mb-3">{% trans "Privacy & notes" %}</div>
+
+            <div class="form-check mb-3">
+              {{ form.is_public }}
+              <label class="form-check-label ms-1">{{ form.is_public.label }}</label>
+              <div class="text-danger small">{{ form.is_public.errors }}</div>
+            </div>
+
+            <div class="mb-0">
+              <label class="form-label">{{ form.notes.label }}</label>
+              {{ form.notes }}
+              <div class="text-danger small">{{ form.notes.errors }}</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="col-12">
+          <div class="d-flex gap-2 justify-content-end">
+            <a class="btn btn-outline-secondary" href="{% url 'habit_list' %}">{% trans "Cancel" %}</a>
+            <button class="btn btn-primary">{% trans "Save" %}</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

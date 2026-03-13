@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-27 20:53+0700\n"
+"POT-Creation-Date: 2026-03-14 00:28+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,32 +20,369 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\config\settings.py:101 .\users\models.py:8
+#: .\config\settings.py:102 .\users\models.py:8
 msgid "English"
 msgstr "English"
 
-#: .\config\settings.py:102 .\users\models.py:9
+#: .\config\settings.py:103 .\users\models.py:9
 msgid "Русский"
 msgstr "Русский"
 
-#: .\templates\base.html:39 .\templates\users\profile.html:4
+#: .\habits\models.py:13
+msgid "Health"
+msgstr "Здоровье"
+
+#: .\habits\models.py:14
+msgid "Study"
+msgstr "Учёба"
+
+#: .\habits\models.py:15
+msgid "Work"
+msgstr "Работа"
+
+#: .\habits\models.py:16
+msgid "Mindfulness"
+msgstr "Осознанность"
+
+#: .\habits\models.py:17
+msgid "Home"
+msgstr "Осознанность"
+
+#: .\habits\models.py:18
+msgid "Other"
+msgstr "Другое"
+
+#: .\habits\models.py:21
+msgid "Low"
+msgstr "Низкий"
+
+#: .\habits\models.py:22
+msgid "Medium"
+msgstr "Средний"
+
+#: .\habits\models.py:23
+msgid "High"
+msgstr "Высокий"
+
+#: .\habits\models.py:26
+msgid "Daily"
+msgstr "Ежедневно"
+
+#: .\habits\models.py:27
+msgid "Specific weekdays"
+msgstr "По дням недели"
+
+#: .\habits\models.py:28
+msgid "Every N days"
+msgstr "Каждые N дней"
+
+#: .\habits\models.py:29
+msgid "N times per week"
+msgstr "N раз в неделю"
+
+#: .\habits\models.py:32
+msgid "times"
+msgstr "раз"
+
+#: .\habits\models.py:33
+msgid "minutes"
+msgstr "мин"
+
+#: .\habits\models.py:34
+msgid "pages"
+msgstr "стр"
+
+#: .\habits\models.py:35
+msgid "glasses"
+msgstr "стаканов"
+
+#: .\habits\models.py:36
+msgid "km"
+msgstr "км"
+
+#: .\habits\models.py:43
+msgid "Owner"
+msgstr "Владелец"
+
+#: .\habits\models.py:46
+msgid "Title"
+msgstr "Название"
+
+#: .\habits\models.py:47 .\templates\habits\habit_detail.html:42
+msgid "Description"
+msgstr "Описание"
+
+#: .\habits\models.py:53 .\templates\habits\habit_detail.html:69
+msgid "Category"
+msgstr "Категория"
+
+#: .\habits\models.py:59 .\templates\habits\habit_detail.html:74
+msgid "Priority"
+msgstr "Приоритет"
+
+#: .\habits\models.py:63
+msgid "Icon (emoji)"
+msgstr "Иконка (эмодзи)"
+
+#: .\habits\models.py:65 .\templates\habits\habit_detail.html:13
+msgid "Start date"
+msgstr "Дата старта"
+
+#: .\habits\models.py:66 .\templates\habits\habit_detail.html:81
+#: .\templates\habits\habit_list.html:15 .\templates\habits\habit_list.html:29
+msgid "Archived"
+msgstr "Архив"
+
+#: .\habits\models.py:73 .\templates\habits\habit_detail.html:103
+msgid "Frequency"
+msgstr "Частота"
+
+#: .\habits\models.py:77
+msgid "Weekdays"
+msgstr "Дни недели"
+
+#: .\habits\models.py:80
+msgid "Interval days"
+msgstr "Интервал (дней)"
+
+#: .\habits\models.py:83 .\templates\habits\habit_detail.html:121
+msgid "Times per week"
+msgstr "Раз в неделю"
+
+#: .\habits\models.py:86
+msgid "Target value"
+msgstr "Значение цели"
+
+#: .\habits\models.py:91
+msgid "Target unit"
+msgstr "Единица цели"
+
+#: .\habits\models.py:95
+msgid "Reminder enabled"
+msgstr ""
+
+#: .\habits\models.py:96
+msgid "Reminder time"
+msgstr ""
+
+#: .\habits\models.py:99 .\templates\habits\habit_detail.html:90
+msgid "Public"
+msgstr "Публичная"
+
+#: .\habits\models.py:100 .\templates\habits\habit_detail.html:47
+msgid "Notes"
+msgstr "Заметки"
+
+#: .\habits\models.py:102
+msgid "Created at"
+msgstr "Создано"
+
+#: .\habits\models.py:103
+msgid "Updated at"
+msgstr "Обновлено"
+
+#: .\habits\views.py:37
+msgid "Habit created."
+msgstr "Привычка создана."
+
+#: .\habits\views.py:53
+msgid "Habit updated."
+msgstr "Привычка обновлена."
+
+#: .\habits\views.py:75
+msgid "Habit archived."
+msgstr "Привычка отправлена в архив."
+
+#: .\habits\views.py:87
+msgid "Habit restored."
+msgstr "Привычка восстановлена."
+
+#: .\habits\views.py:97
+msgid "Habit deleted."
+msgstr "Привычка удалена."
+
+#: .\habits\views.py:140
+msgid "Marked as not done for today."
+msgstr "Отметка за сегодня снята."
+
+#: .\habits\views.py:143
+msgid "Marked as done for today."
+msgstr "Отмечено как выполнено за сегодня."
+
+#: .\templates\base.html:39 .\templates\habits\habit_list.html:3
+#: .\templates\habits\habit_list.html:9
+msgid "Habits"
+msgstr "Привычки"
+
+#: .\templates\base.html:40 .\templates\users\profile.html:4
 #: .\templates\users\profile.html:15
 msgid "Profile"
 msgstr "Профиль"
 
-#: .\templates\base.html:40 .\templates\users\profile.html:102
+#: .\templates\base.html:41 .\templates\users\profile.html:102
 msgid "Logout"
 msgstr "Выйти"
 
-#: .\templates\base.html:42 .\templates\users\login.html:3
+#: .\templates\base.html:43 .\templates\users\login.html:3
 #: .\templates\users\login.html:8
 msgid "Login"
 msgstr "Вход"
 
-#: .\templates\base.html:43 .\templates\users\login.html:30
+#: .\templates\base.html:44 .\templates\users\login.html:30
 #: .\templates\users\register.html:3 .\templates\users\register.html:8
 msgid "Register"
 msgstr "Регистрация"
+
+#: .\templates\habits\habit_confirm_delete.html:3
+#: .\templates\habits\habit_confirm_delete.html:8
+msgid "Delete habit"
+msgstr "Удалить привычку"
+
+#: .\templates\habits\habit_confirm_delete.html:10
+msgid "Are you sure you want to delete:"
+msgstr "Вы уверены, что хотите удалить:"
+
+#: .\templates\habits\habit_confirm_delete.html:15
+#: .\templates\habits\habit_form.html:152
+msgid "Cancel"
+msgstr "Отмена"
+
+#: .\templates\habits\habit_confirm_delete.html:16
+#: .\templates\habits\habit_detail.html:33
+msgid "Delete"
+msgstr "Удалить"
+
+#: .\templates\habits\habit_detail.html:14
+msgid "Next planned"
+msgstr "Следующее выполнение"
+
+#: .\templates\habits\habit_detail.html:19
+msgid "Edit"
+msgstr "Редактировать"
+
+#: .\templates\habits\habit_detail.html:24
+msgid "Archive"
+msgstr "В архив"
+
+#: .\templates\habits\habit_detail.html:29
+msgid "Restore"
+msgstr "Восстановить"
+
+#: .\templates\habits\habit_detail.html:54
+msgid "Progress"
+msgstr "Прогресс"
+
+#: .\templates\habits\habit_detail.html:56
+msgid "Progress and history will be added in the next sprint."
+msgstr ""
+
+#: .\templates\habits\habit_detail.html:66
+msgid "Overview"
+msgstr "Обзор"
+
+#: .\templates\habits\habit_detail.html:79
+msgid "Status"
+msgstr "Статус"
+
+#: .\templates\habits\habit_detail.html:83
+#: .\templates\habits\habit_list.html:14
+msgid "Active"
+msgstr "Активные"
+
+#: .\templates\habits\habit_detail.html:88
+msgid "Visibility"
+msgstr "Видимость"
+
+#: .\templates\habits\habit_detail.html:92 .\templates\users\profile.html:44
+msgid "Private"
+msgstr "Личное"
+
+#: .\templates\habits\habit_detail.html:100
+#: .\templates\habits\habit_form.html:99
+msgid "Schedule"
+msgstr "Расписание"
+
+#: .\templates\habits\habit_detail.html:108
+msgid "Summary"
+msgstr "Кратко"
+
+#: .\templates\habits\habit_detail.html:114
+msgid "Interval"
+msgstr "Интервал"
+
+#: .\templates\habits\habit_detail.html:115
+msgid "day(s)"
+msgstr "дн."
+
+#: .\templates\habits\habit_detail.html:130
+#: .\templates\habits\habit_form.html:78
+msgid "Goal"
+msgstr "Цель"
+
+#: .\templates\habits\habit_detail.html:133
+msgid "Target"
+msgstr "План"
+
+#: .\templates\habits\habit_detail.html:137
+msgid "No goal set."
+msgstr "Цель не задана."
+
+#: .\templates\habits\habit_detail.html:143
+msgid "Created"
+msgstr "Создано"
+
+#: .\templates\habits\habit_detail.html:143
+msgid "Updated"
+msgstr "Обновлено"
+
+#: .\templates\habits\habit_detail.html:149
+#: .\templates\habits\habit_form.html:22
+
+#| msgid "Back to login"
+msgid "Back to list"
+msgstr "Назад ко входу"
+
+#: .\templates\habits\habit_form.html:5 .\templates\habits\habit_form.html:16
+msgid "Create habit"
+msgstr "Создать привычку"
+
+#: .\templates\habits\habit_form.html:5 .\templates\habits\habit_form.html:16
+msgid "Edit habit"
+msgstr "Редактировать привычку"
+
+#: .\templates\habits\habit_form.html:19
+msgid "Fill in the habit settings and save."
+msgstr "Заполните параметры привычки и сохраните."
+
+#: .\templates\habits\habit_form.html:36
+msgid "Basics"
+msgstr "Основное"
+
+#: .\templates\habits\habit_form.html:113
+msgid "Used only for Specific weekdays."
+msgstr "Используется только для режима «По дням недели»."
+
+#: .\templates\habits\habit_form.html:133
+
+#| msgid "Private"
+msgid "Privacy & notes"
+msgstr "Личное"
+
+#: .\templates\habits\habit_form.html:153 .\templates\users\profile.html:103
+msgid "Save"
+msgstr "Сохранить"
+
+#: .\templates\habits\habit_list.html:10
+msgid "New habit"
+msgstr "Новая привычка"
+
+#: .\templates\habits\habit_list.html:16
+msgid "All"
+msgstr "Все"
+
+#: .\templates\habits\habit_list.html:36
+msgid "No habits yet."
+msgstr "Пока нет привычек."
 
 #: .\templates\users\login.html:25
 #: .\templates\users\password_reset_complete.html:10
@@ -59,7 +396,7 @@ msgstr "Нет аккаунта?"
 
 #: .\templates\users\password_reset_complete.html:3
 #: .\templates\users\password_reset_complete.html:8
-#, fuzzy
+
 #| msgid "Password"
 msgid "Password changed"
 msgstr "Пароль изменён"
@@ -70,27 +407,28 @@ msgstr "Теперь вы можете войти с новым паролем."
 
 #: .\templates\users\password_reset_confirm.html:3
 #: .\templates\users\password_reset_confirm.html:8
-#, fuzzy
+
 #| msgid "Change password"
 msgid "Set new password"
 msgstr "Сменить пароль"
 
 #: .\templates\users\password_reset_confirm.html:19
-#, fuzzy
+
 #| msgid "Change password"
 msgid "Save new password"
 msgstr "Сменить пароль"
 
 #: .\templates\users\password_reset_done.html:3
 #: .\templates\users\password_reset_done.html:8
-#, fuzzy
+
 #| msgid "Email"
 msgid "Email sent"
 msgstr "Почта"
 
 #: .\templates\users\password_reset_done.html:9
 msgid "If an account with that email exists, we sent a reset link."
-msgstr "Если аккаунт с таким email существует, мы отправили ссылку для сброса пароля."
+msgstr ""
+"Если аккаунт с таким email существует, мы отправили ссылку для сброса пароля."
 
 #: .\templates\users\password_reset_done.html:10
 msgid "Back to login"
@@ -98,7 +436,6 @@ msgstr "Назад ко входу"
 
 #: .\templates\users\password_reset_form.html:3
 #: .\templates\users\password_reset_form.html:8
-#, fuzzy
 #| msgid "Password"
 msgid "Password reset"
 msgstr "Пароль"
@@ -122,10 +459,6 @@ msgstr "Сменить пароль"
 #: .\templates\users\profile.html:43
 msgid "Account"
 msgstr "Аккаунт"
-
-#: .\templates\users\profile.html:44
-msgid "Private"
-msgstr "Личное"
 
 #: .\templates\users\profile.html:48 .\templates\users\register.html:18
 msgid "Username"
@@ -174,10 +507,6 @@ msgstr "Язык"
 #: .\templates\users\profile.html:93
 msgid "Applied after saving."
 msgstr "Применится после сохранения."
-
-#: .\templates\users\profile.html:103
-msgid "Save"
-msgstr "Сохранить"
 
 #: .\templates\users\register.html:30
 msgid "Password"
