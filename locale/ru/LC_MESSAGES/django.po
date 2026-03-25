@@ -3,16 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-14 00:28+0700\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2026-03-26 00:00+0600\n"
+"Last-Translator: OpenAI\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -46,7 +45,7 @@ msgstr "Осознанность"
 
 #: .\habits\models.py:17
 msgid "Home"
-msgstr "Осознанность"
+msgstr "Дом"
 
 #: .\habits\models.py:18
 msgid "Other"
@@ -159,11 +158,11 @@ msgstr "Единица цели"
 
 #: .\habits\models.py:95
 msgid "Reminder enabled"
-msgstr ""
+msgstr "Напоминание включено"
 
 #: .\habits\models.py:96
 msgid "Reminder time"
-msgstr ""
+msgstr "Время напоминания"
 
 #: .\habits\models.py:99 .\templates\habits\habit_detail.html:90
 msgid "Public"
@@ -274,7 +273,7 @@ msgstr "Прогресс"
 
 #: .\templates\habits\habit_detail.html:56
 msgid "Progress and history will be added in the next sprint."
-msgstr ""
+msgstr "Прогресс и история будут добавлены в следующем спринте."
 
 #: .\templates\habits\habit_detail.html:66
 msgid "Overview"
@@ -375,6 +374,10 @@ msgstr "Сохранить"
 #: .\templates\habits\habit_list.html:10
 msgid "New habit"
 msgstr "Новая привычка"
+
+#: .\templates\habits\habit_list.html:11
+msgid "All your habits in one place"
+msgstr "Все ваши привычки в одном месте"
 
 #: .\templates\habits\habit_list.html:16
 msgid "All"
@@ -527,3 +530,138 @@ msgstr "Уже есть аккаунт?"
 #: .\users\views.py:36
 msgid "Registered successfully. Please sign in."
 msgstr "Регистрация успешна. Пожалуйста, войдите."
+
+#: sprint3
+msgid "Today"
+msgstr "Сегодня"
+
+#: sprint3
+msgid "Local date"
+msgstr "Локальная дата"
+
+#: sprint3
+msgid "Done today"
+msgstr "Выполнено сегодня"
+
+#: sprint3
+msgid "Not done yet"
+msgstr "Пока не выполнено"
+
+#: sprint3
+msgid "Archived habits are read-only on the Today flow."
+msgstr "Архивные привычки недоступны для отметки на странице «Сегодня»."
+
+#: sprint3
+msgid "Undo for today"
+msgstr "Отменить за сегодня"
+
+#: sprint3
+msgid "Mark as done for today"
+msgstr "Отметить выполненной за сегодня"
+
+#: sprint3
+msgid "Open Today page"
+msgstr "Открыть страницу «Сегодня»"
+
+#: sprint3
+msgid "Statistics"
+msgstr "Статистика"
+
+#: sprint3
+msgid "Last 7 days"
+msgstr "Последние 7 дней"
+
+#: sprint3
+msgid "Last 30 days"
+msgstr "Последние 30 дней"
+
+#: sprint3
+msgid "completed"
+msgstr "выполнено"
+
+#: sprint3
+msgid "History for the last 30 days"
+msgstr "История за последние 30 дней"
+
+#: sprint3
+msgid "Done"
+msgstr "Выполнено"
+
+#: sprint3
+msgid "Missed"
+msgstr "Пропущено"
+
+#: sprint3
+msgid "Not scheduled"
+msgstr "Не запланировано"
+
+#: sprint3
+msgid "Detailed history for the last 14 days"
+msgstr "Подробная история за последние 14 дней"
+
+#: sprint3
+msgid "Date"
+msgstr "Дата"
+
+#: sprint3
+msgid "Day"
+msgstr "День"
+
+#: sprint3
+msgid "All habits"
+msgstr "Все привычки"
+
+#: sprint3
+msgid "Pending"
+msgstr "Ожидает"
+
+#: sprint3
+msgid "Undo"
+msgstr "Отменить"
+
+#: sprint3
+msgid "Details"
+msgstr "Подробнее"
+
+#: sprint3
+msgid "No habits are planned for today yet."
+msgstr "На сегодня пока нет запланированных привычек."
+
+#: sprint3
+msgid "%(done)s of %(target)s this week"
+msgstr "%(done)s из %(target)s на этой неделе"
+
+#: sprint3
+msgid "Archived habits cannot be updated."
+msgstr "Архивные привычки нельзя отмечать."
+
+#: sprint3
+msgid "Completed"
+msgstr "Выполнено"
+
+msgid "Daily focus"
+msgstr "Фокус дня"
+
+msgid "Completion"
+msgstr "Выполнение"
+
+msgid "habits completed today"
+msgstr "привычек выполнено сегодня"
+
+msgid "Remaining"
+msgstr "Осталось"
+
+msgid "habits left for today"
+msgstr "привычек осталось на сегодня"
+
+msgid "Marked for today"
+msgstr "Отмечено на сегодня"
+
+msgid "Tap the circle to mark done"
+msgstr "Нажмите на кружок, чтобы отметить выполнение"
+
+msgid "Add a new habit or adjust the schedule to see it here."
+msgstr "Добавьте новую привычку или измените расписание, чтобы она появилась здесь."
+
+msgid "Click the circle to mark this habit as done"
+msgstr "Нажмите на кружок, чтобы отметить привычку как выполненную"

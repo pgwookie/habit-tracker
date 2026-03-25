@@ -4,7 +4,7 @@
 {% block container_style %}max-width: 1200px;{% endblock %}
 
 {% block content %}
-<div class="d-flex align-items-center justify-content-between mb-3">
+<div class="d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3 mb-4">
   <div>
     <h1 class="h4 mb-1">
       {% if habit.icon %}{{ habit.icon }} {% endif %}{{ habit.title }}
@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <div class="d-flex gap-2">
+  <div class="d-flex flex-wrap gap-2">
     <a class="btn btn-outline-primary" href="{% url 'habit_update' habit.pk %}">{% trans "Edit" %}</a>
 
     {% if not habit.is_archived %}
@@ -35,8 +35,50 @@
 </div>
 
 <div class="row g-4">
-  <!-- LEFT -->
   <div class="col-lg-7">
+    <div class="card shadow-sm mb-4">
+      <div class="card-body p-4">
+        <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 mb-4">
+          <div>
+            <div class="fw-semibold mb-1">{% trans "Today" %}</div>
+            <div class="text-muted small">{% trans "Local date" %}: {{ today }}</div>
+          </div>
+
+          {% if is_done_today %}
+            <span class="badge text-bg-success">{% trans "Done today" %}</span>
+          {% else %}
+            <span class="badge text-bg-warning">{% trans "Not done yet" %}</span>
+          {% endif %}
+        </div>
+
+        {% if habit.is_archived %}
+          <div class="alert alert-light border mb-0">{% trans "Archived habits are read-only on the Today flow." %}</div>
+        {% else %}
+          <div class="d-flex flex-wrap align-items-center gap-3">
+            <form method="post" action="{% url 'habit_toggle_today' habit.pk %}" class="m-0">
+              {% csrf_token %}
+              <input type="hidden" name="next" value="{{ request.get_full_path }}">
+              <button
+                class="btn {% if is_done_today %}btn-success{% else %}btn-outline-success{% endif %} rounded-circle d-inline-flex align-items-center justify-content-center"
+                type="submit"
+                style="width: 52px; height: 52px; font-size: 1.3rem;"
+                title="{% if is_done_today %}{% trans 'Undo for today' %}{% else %}{% trans 'Mark as done for today' %}{% endif %}"
+                aria-label="{% if is_done_today %}{% trans 'Undo for today' %}{% else %}{% trans 'Mark as done for today' %}{% endif %}"
+              >{% if is_done_today %}✓{% else %}○{% endif %}</button>
+            </form>
+            <div class="small text-muted">
+              {% if is_done_today %}
+                {% trans "Marked for today" %}
+              {% else %}
+                {% trans "Click the circle to mark this habit as done" %}
+              {% endif %}
+            </div>
+            <a class="btn btn-outline-primary" href="{% url 'habit_today' %}">{% trans "Open Today page" %}</a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
     <div class="card shadow-sm mb-4">
       <div class="card-body p-4">
         <div class="fw-semibold mb-2">{% trans "Description" %}</div>
@@ -49,17 +91,84 @@
       </div>
     </div>
 
+    <div class="card shadow-sm mb-4">
+      <div class="card-body p-4">
+        <div class="fw-semibold mb-3">{% trans "Statistics" %}</div>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="border rounded-4 p-3 h-100 bg-light">
+              <div class="text-muted small mb-1">{% trans "Last 7 days" %}</div>
+              <div class="fs-4 fw-semibold">{{ stats_7.percent }}%</div>
+              <div class="text-muted small">
+                {{ stats_7.done_count }} / {{ stats_7.expected_count }} {% trans "completed" %}
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="border rounded-4 p-3 h-100 bg-light">
+              <div class="text-muted small mb-1">{% trans "Last 30 days" %}</div>
+              <div class="fs-4 fw-semibold">{{ stats_30.percent }}%</div>
+              <div class="text-muted small">
+                {{ stats_30.done_count }} / {{ stats_30.expected_count }} {% trans "completed" %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+      <div class="card-body p-4">
+        <div class="fw-semibold mb-3">{% trans "History for the last 30 days" %}</div>
+
+        <div class="d-flex flex-wrap gap-2 mb-3">
+          {% for item in history_30 %}
+            <span class="badge rounded-pill text-bg-{{ item.badge_class }} px-3 py-2"
+                  title="{{ item.date }} — {{ item.status_label }}">
+              {{ item.date|date:"d.m" }}
+            </span>
+          {% endfor %}
+        </div>
+
+        <div class="small text-muted d-flex flex-wrap gap-3">
+          <span><span class="badge text-bg-success">&nbsp;</span> {% trans "Done" %}</span>
+          <span><span class="badge text-bg-warning">&nbsp;</span> {% trans "Missed" %}</span>
+          <span><span class="badge text-bg-secondary">&nbsp;</span> {% trans "Not scheduled" %}</span>
+        </div>
+      </div>
+    </div>
+
     <div class="card shadow-sm">
       <div class="card-body p-4">
-        <div class="fw-semibold mb-2">{% trans "Progress" %}</div>
-        <div class="alert alert-light border mb-0">
-          {% trans "Progress and history will be added in the next sprint." %}
+        <div class="fw-semibold mb-3">{% trans "Detailed history for the last 14 days" %}</div>
+
+        <div class="table-responsive">
+          <table class="table table-sm align-middle mb-0">
+            <thead>
+              <tr>
+                <th>{% trans "Date" %}</th>
+                <th>{% trans "Day" %}</th>
+                <th>{% trans "Status" %}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in history_14 %}
+                <tr>
+                  <td>{{ item.date|date:"d.m.Y" }}</td>
+                  <td>{{ item.date|date:"D" }}</td>
+                  <td>
+                    <span class="badge text-bg-{{ item.badge_class }}">{{ item.status_label }}</span>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- RIGHT -->
   <div class="col-lg-5">
     <div class="card shadow-sm mb-4">
       <div class="card-body p-4">
@@ -106,7 +215,7 @@
 
         <div class="d-flex justify-content-between mb-2">
           <span class="text-muted">{% trans "Summary" %}</span>
-          <span class="fw-semibold">{{ schedule_summary }}</span>
+          <span class="fw-semibold text-end">{{ schedule_summary }}</span>
         </div>
 
         {% if habit.frequency_type == "interval" %}
@@ -145,7 +254,8 @@
   </div>
 </div>
 
-<div class="mt-4">
+<div class="mt-4 d-flex flex-wrap gap-2">
   <a class="btn btn-outline-secondary" href="{% url 'habit_list' %}">{% trans "Back to list" %}</a>
+  <a class="btn btn-outline-primary" href="{% url 'habit_today' %}">{% trans "Today" %}</a>
 </div>
 {% endblock %}
